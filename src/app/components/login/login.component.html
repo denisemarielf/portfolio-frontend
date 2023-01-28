@@ -1,0 +1,13 @@
+<section class="form-container">
+    <form class="form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+        <label class="label">
+            Username
+            <input type="text" id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required />
+        </label>
+        <label class="label" for="password">
+            Password
+            <input name="password" type="password" id="password" [(ngModel)]="password" required />
+        </label>
+        <button>Ingresar</button>
+    </form>
+</section>

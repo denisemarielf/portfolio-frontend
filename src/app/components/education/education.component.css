@@ -1,0 +1,19 @@
+.education-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border-left: 8px solid pink;
+    padding-left: 40px;
+}
+
+.education-image {
+    width: 100px;
+    height: 100px;
+}
+
+.dot {
+    position: relative;
+    right: 59px;
+    font-size: 50px;
+    color: lightblue;
+}

@@ -1,0 +1,15 @@
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+h2 {
+    align-self: center;
+    padding-bottom: 20px;
+}
+
+.circle-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}

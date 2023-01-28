@@ -1,0 +1,6 @@
+<section class="skills-container">
+    <h2>Hard & soft skills</h2>
+    <div class="circle-container">
+        <app-skill *ngFor="let skill of listaDeSkills" [titulo] = "skill.titulo" [imagen] = "skill.imagen" [nivel] = "skill.nivel"/>
+    </div>
+</section>

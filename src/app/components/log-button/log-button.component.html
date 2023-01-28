@@ -1,0 +1,6 @@
+<button (click)="login()" *ngIf="!isLogged" class="log-button">
+INGRESAR
+</button>
+<button class="log-button" (click)="onLogOut()" *ngIf="isLogged">
+CERRAR SESIÓN
+</button>

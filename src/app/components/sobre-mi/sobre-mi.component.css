@@ -1,0 +1,32 @@
+.sobre-mi {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: rgb(198, 252, 252);
+    padding: 30px;
+    margin-top: 20px;
+    padding-bottom: 50px;
+}
+
+.imagen-container {
+    color: white;
+    background: repeating-linear-gradient(
+      45deg,
+      white,
+      white 10px,
+      black 10px,
+      black 20px
+    );
+}
+
+.imagen {
+    position: relative;
+    top: 30px;
+    left: 30px;
+    width: 20vw;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.informacion {
+    padding: 20px;
+}

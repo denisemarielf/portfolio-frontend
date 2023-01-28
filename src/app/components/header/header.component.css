@@ -1,0 +1,42 @@
+header {
+    height: 70vh;
+    max-width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+    background-image: url(../../../assets/5719acba2bed7918a0a24c1c063a5c19.jpg)
+    
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.637);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.logo {
+    height: 70px;
+}
+a {
+    height: 50px;
+    width: 50px;
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

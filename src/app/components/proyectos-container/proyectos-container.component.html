@@ -1,0 +1,7 @@
+<section class="proyectos-container">
+    <h2>Proyectos</h2>
+    <div>
+        <app-proyecto *ngFor="let proyecto of listaDeProyectos" [titulo] = "proyecto.titulo"
+        [fecha] = "proyecto.fecha" [descripcion] = "proyecto.descripcion" [link] = "proyecto.link" [imagen] = "proyecto.imagen"/>
+    </div>
+</section>
