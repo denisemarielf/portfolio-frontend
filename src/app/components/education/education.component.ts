@@ -1,4 +1,6 @@
 import { Component, OnInit, Input} from '@angular/core';
+import { Educacion } from 'src/app/model/educacion.model';
+import { faPenToSquare, faSquareXmark } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-education',
@@ -7,12 +9,9 @@ import { Component, OnInit, Input} from '@angular/core';
 })
 export class EducationComponent implements OnInit {
 
-  @Input() escuela: string =""
-  @Input() inicio: number = 0
-  @Input() fin: number = 0
-  @Input() imagen: string =""
-  @Input() titulo: string =""
-  @Input() carrera: string =""
+  @Input() educacion: Educacion = new Educacion("","","","",0,"","")
+  editIcon = faPenToSquare
+  deleteIcon = faSquareXmark
 
   ngOnInit(): void {
   }

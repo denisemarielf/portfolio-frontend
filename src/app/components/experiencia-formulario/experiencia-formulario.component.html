@@ -1,0 +1,49 @@
+
+<ng-template #contenido let-modal>
+    <section class="form-container">
+        <div class="modal-header">
+    <h4 class="modal-title">Agregar experiencia</h4>
+        </div>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body">
+
+        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+            <div *ngIf="operation !== 'delete'">
+            <label for="titulo" class="label">
+                Titulo:
+                <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="experiencia.titulo" required />
+            </label>
+            <label class="logo" for="logo">
+                Logo:
+                <input class="form-control" name="logo" type="text" id="logo" [(ngModel)]="experiencia.logo" required />
+            </label>
+            <label class="descripcion" for="descripcion">
+                Descripcion:
+                <input class="form-control" name="descripcion" type="text" id="descripcion" [(ngModel)]="experiencia.descripcion" required />
+            </label>
+            <label class="inicio" for="inicio">
+                Inicio:
+                <input class="form-control" name="inicio" type="date" id="inicio" [(ngModel)]="experiencia.inicio" required />
+            </label>
+            <label class="fin" for="fin">
+                Fin:
+                <input class="form-control" name="fin" type="date" id="fin" [(ngModel)]="experiencia.fin" required />
+            </label>
+        </div>
+        <div *ngIf="operation === 'delete'"> 
+            <h3>¿Estas seguro que quieres eliminar?</h3>
+        </div>
+            <button  (click)="modal.close()">{{operation === "delete" ? "Eliminar" : "Enviar"}}</button>
+
+
+        </form>
+    </div>
+    </section>
+     </ng-template>
+    <button *ngIf="operation === 'create'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Agregar</button>
+    <button *ngIf="operation === 'delete'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Eliminar</button>
+    <button *ngIf="operation === 'edit'" type="button" class="btn btn-light" (click)="modal.open(contenido); getExperienciaDetails()">Editar</button>
+
+    

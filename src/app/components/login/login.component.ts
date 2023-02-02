@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { LoginUsuario } from 'src/app/model/login-usuario';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-login',
@@ -20,7 +22,12 @@ export class LoginComponent implements OnInit{
   roles: string[] = [];
   errMsj!: string;
   
-  constructor(private tokenService: TokenService, private authService: AuthService, private router: Router) { }
+  constructor(private tokenService: TokenService, 
+    private authService: AuthService, 
+    private router: Router,
+    public modal: NgbModal) { 
+      
+    }
 
   ngOnInit(): void {
       if (this.tokenService.getToken()) {
@@ -39,7 +46,8 @@ export class LoginComponent implements OnInit{
       this.tokenService.setUserName(data.nombreUsuario);
       this.tokenService.setAuthorities(data.authorities);
       this.roles = data.authorities;
-      this.router.navigate([''])
+      window.location.reload()
+     
     }, err => {
       this.isLogged = false;
       this.isLogginFail = true;
@@ -47,4 +55,12 @@ export class LoginComponent implements OnInit{
       console.log(this.errMsj)
     })
   }
+
+  onLogOut():void{
+    this.tokenService.logOut();
+    this.ngOnInit()
+    window.location.reload()
+  }
+
+
 }

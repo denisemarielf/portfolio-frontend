@@ -1,13 +1,28 @@
-<section class="form-container">
-    <form class="form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
-        <label class="label">
-            Username
-            <input type="text" id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required />
-        </label>
-        <label class="label" for="password">
-            Password
-            <input name="password" type="password" id="password" [(ngModel)]="password" required />
-        </label>
-        <button>Ingresar</button>
-    </form>
-</section>
+
+<ng-template #contenido let-modal>
+    <section class="form-container">
+        <div class="modal-header">
+    <h4 class="modal-title">Login</h4>
+        </div>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body">
+        <form class="form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
+            <label class="label">
+                Username
+                <input type="text" id="nombreUsuario" name="nombreUsuario" [(ngModel)]="nombreUsuario" required />
+            </label>
+            <label class="label" for="password">
+                Password
+                <input name="password" type="password" id="password" [(ngModel)]="password" required />
+            </label>
+       
+            <button (click)="modal.close()">Ingresar</button>
+        </form>
+    </div>
+    </section>
+     </ng-template>
+    <button *ngIf="!isLogged" type="button" class="btn btn-light" (click)="modal.open(contenido)">Login</button>
+    <button *ngIf="isLogged" type="button" class="btn btn-outline-danger" (click)="onLogOut()">Cerrar sesión</button>
+    

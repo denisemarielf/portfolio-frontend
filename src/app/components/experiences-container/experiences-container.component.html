@@ -1,8 +1,8 @@
 <section class="experiences-container">
     <h2>Experiencia</h2>
+    <app-experiencia-formulario [operation]="'create'"></app-experiencia-formulario>
     <div>
-        <app-experience *ngFor="let experiencia of listaDeExperiencias" [titulo] = "experiencia.titulo"
-        [inicio] = "experiencia.inicio" [fin] = "experiencia.fin" [descripcion] = "experiencia.descripcion" [logo] = "experiencia.logo"/>
+        <app-experience *ngFor="let experiencia of listaDeExperiencias" [experiencia] = "experiencia"/>
     </div>
 </section>
 

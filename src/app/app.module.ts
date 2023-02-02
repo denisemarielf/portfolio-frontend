@@ -18,6 +18,11 @@ import { LoginComponent } from './components/login/login.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { LogButtonComponent } from './components/log-button/log-button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './components/modal/modal.component';
+import { ExperienciaFormularioComponent } from './components/experiencia-formulario/experiencia-formulario.component';
+
 
 
 @NgModule({
@@ -35,14 +40,19 @@ import { LogButtonComponent } from './components/log-button/log-button.component
     ProyectosContainerComponent,
     LoginComponent,
     HomeComponent,
-    LogButtonComponent
+    LogButtonComponent,
+    ModalComponent,
+    ExperienciaFormularioComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     NgCircleProgressModule.forRoot(),
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    FontAwesomeModule,
+    NgbModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

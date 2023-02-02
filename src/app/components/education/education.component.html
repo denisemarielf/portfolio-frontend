@@ -1,10 +1,13 @@
 <section class="education-item">
     <p class="dot">●</p>
-    <img class="education-image" src="{{imagen}}">
+    <img class="education-image" src="{{educacion.imagen}}">
    <div>
-        <h3>{{titulo}}</h3>
-        <p>Carrera: {{carrera}}</p>
-        <p>{{inicio}} - {{fin}}</p>
+        <h3>{{educacion.titulo}}</h3>
+        <p>Carrera: {{educacion.carrera}}</p>
+        <p>{{educacion.inicio}} - {{educacion.fin}}</p>
     </div>
-    
+    <div>
+        <button></button>
+        <button>{{deleteIcon}}</button>
+    </div>
 </section>

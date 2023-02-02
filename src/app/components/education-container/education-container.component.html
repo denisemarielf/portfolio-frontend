@@ -1,7 +1,6 @@
 <section class="education-container">
     <div>
-        <app-education *ngFor="let educacion of listaDeEducaciones" [escuela] = "educacion.escuela" [titulo] = "educacion.titulo"
-        [inicio] = "educacion.inicio" [fin] = "educacion.fin" [carrera] = "educacion.carrera" [imagen] = "educacion.imagen"/>      
+        <app-education *ngFor="let educacion of listaDeEducaciones" [educacion] = "educacion"/>      
     </div>    
     <h2>Educacion</h2>
 </section>

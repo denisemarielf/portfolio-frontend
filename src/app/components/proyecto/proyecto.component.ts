@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Proyecto } from 'src/app/model/proyecto.model';
 
 @Component({
   selector: 'app-proyecto',
@@ -6,9 +7,9 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./proyecto.component.css']
 })
 export class ProyectoComponent {
- @Input() titulo: string = ""
- @Input() link: string = ""
- @Input() imagen: string = ""
- @Input() fecha: number = 0
- @Input() descripcion: string = ""
+ 
+  @Input() proyecto: Proyecto = new Proyecto("","","","")
+
+  ngOnInit(): void {
+  }
 }

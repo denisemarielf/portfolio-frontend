@@ -1,10 +1,20 @@
 <section class="experience-item">
     <p class="dot">●</p>
-    <img class="experience-image" src="{{logo}}">
+    <img class="experience-image" src="{{experiencia.logo}}">
    <div>
-        <h3>{{titulo}}</h3>
-        <p>{{inicio}} - {{fin}}</p>
-        <p>{{descripcion}}</p>
+        <h3>{{experiencia.titulo}}</h3>
+        <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
+        <p>{{experiencia.descripcion}}</p>
     </div>
-    
+    <div >
+        <app-experiencia-formulario [data]="experiencia" [operation]="'edit'"></app-experiencia-formulario>
+        <app-experiencia-formulario [data]="experiencia" [operation]="'delete'"></app-experiencia-formulario>
+        <button>
+            <fa-icon [icon]="editIcon"></fa-icon>
+        </button>
+        <button>
+            <fa-icon [icon]="deleteIcon"></fa-icon>
+        </button>
+    </div>
+
 </section>
