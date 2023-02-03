@@ -1,6 +1,8 @@
 <section class="skills-container">
     <h2>Hard & soft skills</h2>
+
+    <app-skill-formulario [operation]="'create'"></app-skill-formulario>
     <div class="circle-container">
-        <app-skill *ngFor="let skill of listaDeSkills" [titulo] = "skill.titulo" [imagen] = "skill.imagen" [nivel] = "skill.nivel"/>
+        <app-skill *ngFor="let skill of listaDeSkills" [habilidad]="skill"/>
     </div>
 </section>

@@ -25,6 +25,7 @@ import { ExperienciaFormularioComponent } from './components/experience-componen
 import { EducationFormComponent } from './components/education-components/education-form/education-form.component';
 import { ProyectoFormularioComponent } from './components/proyecto-components/proyecto-formulario/proyecto-formulario.component';
 import { SobreMiFormularioComponent } from './components/sobre-mi/sobre-mi-formulario/sobre-mi-formulario.component';
+import { SkillFormularioComponent } from './components/skill-components/skill-formulario/skill-formulario.component';
 
 
 
@@ -49,6 +50,7 @@ import { SobreMiFormularioComponent } from './components/sobre-mi/sobre-mi-formu
     EducationFormComponent,
     ProyectoFormularioComponent,
     SobreMiFormularioComponent,
+    SkillFormularioComponent,
   ],
   imports: [
     BrowserModule,

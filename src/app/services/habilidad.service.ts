@@ -6,7 +6,7 @@ import { Habilidad } from '../model/habilidad.model';
 @Injectable({
   providedIn: 'root'
 })
-export class EducacionService {
+export class HabilidadService {
 
   private _refresh$ = new Subject<void>()
 
@@ -24,6 +24,15 @@ export class EducacionService {
 
   public save(habilidad: Habilidad): Observable<any>{
     return this.http.post<any>(`${this.URL}/create`, habilidad)
+    .pipe(
+      tap(() => {
+        this._refresh$.next();
+      })
+    )
+  }
+
+  public delete(id:number): Observable<any> {
+    return this.http.delete<any>(`${this.URL}/delete/${id}`)
     .pipe(
       tap(() => {
         this._refresh$.next();

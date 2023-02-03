@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { Habilidad } from 'src/app/model/habilidad.model';
 
 @Component({
   selector: 'app-skill',
@@ -7,7 +8,5 @@ import { Component, Input} from '@angular/core';
 })
 export class SkillComponent {
 
-  @Input() titulo = ""
-  @Input() nivel: number = 0
-  @Input() imagen = ""
+  @Input() habilidad: Habilidad = new Habilidad("", 0, "", "");
 }

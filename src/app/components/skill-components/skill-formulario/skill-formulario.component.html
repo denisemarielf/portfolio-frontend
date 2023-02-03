@@ -1,0 +1,43 @@
+<ng-template #contenido let-modal>
+    <section class="form-container">
+        <div class="modal-header">
+    <h4 class="modal-title">Agregar habilidad</h4>
+        </div>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body">
+
+        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+            <div *ngIf="operation !== 'delete'">
+            <label for="titulo" class="label">
+                Titulo:
+                <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="habilidad.titulo" required />
+            </label>
+            <label class="nivel" for="nivel">
+                Nivel:
+                <input class="form-control" name="nivel" type="number" id="nivel" [(ngModel)]="habilidad.nivel" required />
+            </label>
+            <label class="tipo" for="tipo">
+                Tipo:
+                <input class="form-control" name="tipo" type="text" id="tipo" [(ngModel)]="habilidad.tipo" required />
+            </label>
+            <label class="imagen" for="imagen">
+                Imagen:
+                <input class="form-control" name="imagen" type="text" id="imagen" [(ngModel)]="habilidad.imagen" required />
+            </label>
+
+        </div>
+        <div *ngIf="operation === 'delete'"> 
+            <h3>¿Estas seguro que quieres eliminar?</h3>
+        </div>
+            <button  (click)="modal.close()">{{operation === "delete" ? "Eliminar" : "Enviar"}}</button>
+
+
+        </form>
+    </div>
+    </section>
+     </ng-template>
+    <button *ngIf="operation === 'create'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Agregar</button>
+    <button *ngIf="operation === 'delete'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Eliminar</button>
+    <button *ngIf="operation === 'edit'" type="button" class="btn btn-light" (click)="modal.open(contenido); getHabilidadDetails()">Editar</button>

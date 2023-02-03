@@ -1,8 +1,8 @@
 <div class="circle">
 <circle-progress
-  [percent]="nivel"
+  [percent]="habilidad.nivel"
   [radius]="100"
-  [imageSrc]="imagen"
+  [imageSrc]="habilidad.imagen"
   [showImage]="true"
   [imageHeight]="50"
   [imageWidth]="50"
@@ -13,5 +13,7 @@
   [animation]="true"
   [animationDuration]="300"
 ></circle-progress>
-<p>{{titulo}}</p>
+<p>{{habilidad.titulo}}</p>
+<app-skill-formulario [data]="habilidad" [operation]="'edit'"></app-skill-formulario>
+<app-skill-formulario [data]="habilidad" [operation]="'delete'"></app-skill-formulario>
 </div>
