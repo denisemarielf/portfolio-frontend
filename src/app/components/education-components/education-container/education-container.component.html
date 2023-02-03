@@ -3,5 +3,8 @@
         <app-education *ngFor="let educacion of listaDeEducaciones" [educacion] = "educacion"/>      
     </div>    
     <h2>Educacion</h2>
+    <div>
+        <app-education-form [operation]="'create'"></app-education-form>
+    </div>
 </section>
 

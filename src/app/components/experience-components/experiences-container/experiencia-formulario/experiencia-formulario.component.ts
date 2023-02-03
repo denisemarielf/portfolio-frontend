@@ -14,6 +14,7 @@ export class ExperienciaFormularioComponent implements OnInit {
   
   experiencia:Experiencia = new Experiencia("", "", "", "", "");
 
+  
   constructor(private experienciaService: ExperienciaService, public modal: NgbModal) { }
 
   ngOnInit(): void {

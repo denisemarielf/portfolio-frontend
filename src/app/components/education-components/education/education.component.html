@@ -7,7 +7,7 @@
         <p>{{educacion.inicio}} - {{educacion.fin}}</p>
     </div>
     <div>
-        <button></button>
-        <button>{{deleteIcon}}</button>
+        <app-education-form [data]="educacion" [operation]="'edit'"></app-education-form>
+        <app-education-form [data]="educacion" [operation]="'delete'"></app-education-form>
     </div>
 </section>

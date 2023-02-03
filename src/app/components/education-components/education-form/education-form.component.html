@@ -1,0 +1,57 @@
+
+<ng-template #contenido let-modal>
+    <section class="form-container">
+        <div class="modal-header">
+    <h4 class="modal-title">Agregar educacion</h4>
+        </div>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body">
+
+        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+            <div *ngIf="operation !== 'delete'">
+            <label for="titulo" class="label">
+                Escuela:
+                <input type="text" class="form-control" id="escuela" name="escuela" [(ngModel)]="educacion.escuela" required />
+            </label>
+            <label class="logo" for="logo">
+                Titulo:
+                <input class="form-control" name="titulo" type="text" id="titulo" [(ngModel)]="educacion.titulo" required />
+            </label>
+            <label class="imagen" for="imagen">
+                Imagen:
+                <input class="form-control" name="imagen" type="text" id="imagen" [(ngModel)]="educacion.imagen" required />
+            </label>
+            <label class="carrera" for="carrera">
+                Carrera:
+                <input class="form-control" name="carrera" type="text" id="carrera" [(ngModel)]="educacion.carrera" required />
+            </label>
+            <label class="puntaje" for="puntaje">
+                Puntaje:
+                <input class="form-control" name="puntaje" type="number" id="puntaje" [(ngModel)]="educacion.puntaje" required />
+            </label>
+            <label class="inicio" for="inicio">
+                Inicio:
+                <input class="form-control" name="inicio" type="number" id="inicio" [(ngModel)]="educacion.inicio" required />
+            </label>
+            <label class="fin" for="fin">
+                Fin:
+                <input class="form-control" name="fin" type="number" id="fin" [(ngModel)]="educacion.fin" required />
+            </label>
+        </div>
+        <div *ngIf="operation === 'delete'"> 
+            <h3>¿Estas seguro que quieres eliminar?</h3>
+        </div>
+            <button  (click)="modal.close()">{{operation === "delete" ? "Eliminar" : "Enviar"}}</button>
+
+
+        </form>
+    </div>
+    </section>
+     </ng-template>
+    <button *ngIf="operation === 'create'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Agregar</button>
+    <button *ngIf="operation === 'delete'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Eliminar</button>
+    <button *ngIf="operation === 'edit'" type="button" class="btn btn-light" (click)="modal.open(contenido); getEducacionDetails()">Editar</button>
+
+    

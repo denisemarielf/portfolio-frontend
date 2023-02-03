@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/services/educacion.service';
+import { Subscription } from 'rxjs'
 
 @Component({
   selector: 'app-education-container',
@@ -12,9 +13,17 @@ export class EducationContainerComponent implements OnInit {
 
   listaDeEducaciones = new Array<Educacion>()
 
+  suscription : Subscription
   constructor (public educacionService : EducacionService) {  }
 
   ngOnInit(): void {
+    this.getEducacion()
+    this.suscription = this.educacionService.refresh$.subscribe(()=> {
+      this.getEducacion()
+    })
+  }
+
+  getEducacion():void {
     this.educacionService.getEducacion().subscribe((data: any) => {
       this.listaDeEducaciones = data;
     })

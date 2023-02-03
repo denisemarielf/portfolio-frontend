@@ -21,10 +21,6 @@ export class ExperienciaService {
     return this.http.get<Experiencia[]>(this.URL);
   }
 
-  public getDetails(id: number): Observable<Experiencia>{
-    return this.http.get<Experiencia>(`${this.URL}/details/${id}`);
-  }
-
   public save(experiencia: Experiencia): Observable<any>{
     return this.http.post<any>(`${this.URL}/create`, experiencia)
     .pipe(
@@ -32,10 +28,6 @@ export class ExperienciaService {
         this._refresh$.next();
       })
     )
-  }
-
-  public update(id: number, experiencia: Experiencia): Observable<any> {
-    return this.http.post<any>(`${this.URL}/${id}`, experiencia);
   }
 
   public delete(id:number): Observable<any> {
@@ -47,3 +39,9 @@ export class ExperienciaService {
     )
   }
 }
+
+/*
+  public update(id: number, experiencia: Experiencia): Observable<any> {
+    return this.http.post<any>(`${this.URL}/${id}`, experiencia);
+  }
+*/

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/services/persona.service';
-import { SobreMiService } from 'src/app/services/sobre-mi.service';
+
 
 @Component({
   selector: 'app-sobre-mi',
