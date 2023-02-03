@@ -23,6 +23,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ModalComponent } from './components/modal/modal.component';
 import { ExperienciaFormularioComponent } from './components/experience-components/experiences-container/experiencia-formulario/experiencia-formulario.component';
 import { EducationFormComponent } from './components/education-components/education-form/education-form.component';
+import { ProyectoFormularioComponent } from './components/proyecto-components/proyecto-formulario/proyecto-formulario.component';
+import { SobreMiFormularioComponent } from './components/sobre-mi/sobre-mi-formulario/sobre-mi-formulario.component';
 
 
 
@@ -45,6 +47,8 @@ import { EducationFormComponent } from './components/education-components/educat
     ModalComponent,
     ExperienciaFormularioComponent,
     EducationFormComponent,
+    ProyectoFormularioComponent,
+    SobreMiFormularioComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,7 +21,6 @@ export class ExperienceComponent implements OnInit{
 
   ngOnInit(): void {
     this.tokenService.getToken() ? this.isLogged = true : this.isLogged = false;
-  console.log(this.experiencia.id)
   }
 
   

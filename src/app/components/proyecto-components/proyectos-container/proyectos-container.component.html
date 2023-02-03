@@ -1,5 +1,6 @@
 <section class="proyectos-container">
     <h2>Proyectos</h2>
+    <app-proyecto-formulario [operation]="'create'"></app-proyecto-formulario>
     <div>
         <app-proyecto *ngFor="let proyecto of listaDeProyectos" [proyecto] = "proyecto"/>
     </div>

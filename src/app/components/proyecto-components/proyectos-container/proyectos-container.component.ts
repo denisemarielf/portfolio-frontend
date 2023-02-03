@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Proyecto } from 'src/app/model/proyecto.model';
 import { ProyectoService } from 'src/app/services/proyecto.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-proyectos-container',
@@ -15,7 +16,15 @@ export class ProyectosContainerComponent implements OnInit {
 
   constructor (public proyectoService : ProyectoService) {  }
 
+  suscription!: Subscription;
   ngOnInit(): void {
+    this.getProyecto()
+    this.suscription = this.proyectoService.refresh$.subscribe(() => {
+      this.getProyecto()
+    })
+  }
+
+  getProyecto():void {
     this.proyectoService.getProyecto().subscribe((data: any) => {
       this.listaDeProyectos = data;
     })
