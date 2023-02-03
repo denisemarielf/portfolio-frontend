@@ -1,1 +1,58 @@
-<p>sobre-mi-formulario works!</p>
+
+<ng-template #contenido let-modal>
+    <section class="form-container">
+        <div class="modal-header">
+    <h4 class="modal-title">Agregar persona</h4>
+        </div>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="modal-body">
+
+        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+ 
+            <label for="nombre" class="label">
+                Nombre:
+                <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required />
+            </label>
+            <label class="apellido" for="apellido">
+                Apellido:
+                <input class="form-control" name="apellido" type="text" id="apellido" [(ngModel)]="persona.apellido" required />
+            </label>
+            <label class="fecha_nacimiento" for="fecha_nacimiento">
+                Fecha de nacimiento:
+                <input class="form-control" name="fecha_nacimiento" type="date" id="fecha_nacimiento" [(ngModel)]="persona.fecha_nacimiento" required />
+            </label>
+            <label class="nacionalidad" for="nacionalidad">
+                Nacionalidad:
+                <input class="form-control" name="nacionalidad" type="text" id="nacionalidad" [(ngModel)]="persona.nacionalidad" required />
+            </label>
+            <label class="mail" for="mail">
+                Mail:
+                <input class="form-control" name="mail" type="mail" id="mail" [(ngModel)]="persona.mail" required />
+            </label>
+            <label class="sobre_mi" for="sobre_mi">
+                Sobre mi:
+                <input class="form-control" name="sobre_mi" type="text" id="sobre_mi" [(ngModel)]="persona.sobre_mi" required />
+            </label>
+            <label class="ocupacion" for="ocupacion">
+                Ocupacion:
+                <input class="form-control" name="ocupacion" type="text" id="ocupacion" [(ngModel)]="persona.ocupacion" required />
+            </label>
+            <label class="imagen_fondo" for="imagen_fondo">
+                Imagen de fondo:
+                <input class="form-control" name="imagen_fondo" type="text" id="imagen_fondo" [(ngModel)]="persona.imagen_fondo" required />
+            </label>
+            <label class="imagen_perfil" for="imagen_perfil">
+                Imagen de perfil:
+                <input class="form-control" name="imagen_perfil" type="text" id="imagen_perfil" [(ngModel)]="persona.imagen_perfil" required />
+            </label>
+
+            <button  (click)="modal.close()">Editar</button>
+        </form>
+    </div>
+    </section>
+     </ng-template>
+    <button type="button" class="btn btn-light" (click)="modal.open(contenido); getPersonaDetails()">Editar</button>
+
+    

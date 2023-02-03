@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/services/persona.service';
-
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-sobre-mi',
@@ -15,10 +15,18 @@ export class SobreMiComponent implements OnInit {
 
   constructor(private personaService : PersonaService) {}
 
+  suscription: Subscription;
 
   ngOnInit(): void {
-      this.personaService.getPersona().subscribe((data: any) => {
-        this.persona = data;
+      this.getPersona()
+      this.suscription = this.personaService.refresh$.subscribe(() => {
+        this.getPersona()
       })
+  }
+
+  getPersona():void {
+    this.personaService.getPersona().subscribe((data: any) => {
+      this.persona = data;
+    })
   }
 }
