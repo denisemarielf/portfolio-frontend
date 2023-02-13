@@ -1,7 +1,7 @@
 .skills-container {
     display: flex;
     flex-direction: column;
-    padding: 40px;
+    height: 100vh;
 }
 
 h2 {
@@ -11,5 +11,14 @@ h2 {
 
 .circle-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    height: 100%;
+    width: 100%;
+
 }
+
+.skills-top {
+    display: flex;
+    justify-content: space-around;
+}
+

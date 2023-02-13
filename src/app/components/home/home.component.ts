@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription'
 import { AuthService } from 'src/app/services/auth.service';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,6 +12,15 @@ import { AuthService } from 'src/app/services/auth.service';
 export class HomeComponent implements OnInit {
   
   suscription!: Subscription;
+
+  selection: string = "sobre-mi"
+
+  selectSection(section: string) {
+    this.selection = section
+    console.log(this.selection)
+  }
+
+  
 
   constructor(private authService: AuthService, 
     private router: Router,

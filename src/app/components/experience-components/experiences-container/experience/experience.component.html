@@ -2,19 +2,15 @@
     <p class="dot">●</p>
     <img class="experience-image" src="{{experiencia.logo}}">
    <div>
-        <h3>{{experiencia.titulo}}</h3>
-        <p>{{experiencia.inicio}} - {{experiencia.fin}}</p>
-        <p>{{experiencia.descripcion}}</p>
+        <p class="e-fecha">{{experiencia.inicio}} - {{experiencia.fin}}</p>
+        <h3 class="e-titulo">{{experiencia.titulo}}</h3>
+        <p class="e-descripcion">{{experiencia.descripcion}}</p>
     </div>
-    <div >
+    <div class="e-button-container">
         <app-experiencia-formulario [data]="experiencia" [operation]="'edit'"></app-experiencia-formulario>
         <app-experiencia-formulario [data]="experiencia" [operation]="'delete'"></app-experiencia-formulario>
-        <button>
-            <fa-icon [icon]="editIcon"></fa-icon>
-        </button>
-        <button>
-            <fa-icon [icon]="deleteIcon"></fa-icon>
-        </button>
+       
     </div>
+   
 
 </section>

@@ -1,6 +1,21 @@
 .experiences-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    padding: 40px;
+   
+    gap: 20px;
+ 
+}
+
+.experience-items {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.experience-top {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
 }

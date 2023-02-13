@@ -10,7 +10,7 @@ export class PersonaService {
 
   private _refresh$ = new Subject<void>()
 
-  URL = "http://localhost:8080/persona/3";
+  URL = "http://localhost:8080/persona";
 
   constructor(private http: HttpClient) {  }
 
@@ -19,7 +19,7 @@ export class PersonaService {
   }
 
   public getPersona(): Observable<Persona>{
-    return this.http.get<Persona>(this.URL);
+    return this.http.get<Persona>(this.URL+"/3");
   }
 
   public save(persona: Persona): Observable<any>{

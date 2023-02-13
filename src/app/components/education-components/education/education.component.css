@@ -1,9 +1,9 @@
 .education-item {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
-    border-left: 8px solid pink;
-    padding-left: 40px;
+    border-left: 4px solid pink;
+    height: 150px;
 }
 
 .education-image {
@@ -13,7 +13,27 @@
 
 .dot {
     position: relative;
-    right: 59px;
-    font-size: 50px;
+    right: 10px;
+    font-size: 25px;
     color: lightblue;
+    align-self: flex-start;
+}
+
+.edu-fecha {
+    font-size: small;
+}
+
+.edu-titulo {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.edu-descripcion {
+    font-size: medium;
+}
+
+.edu-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }

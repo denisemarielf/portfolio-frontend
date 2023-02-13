@@ -2,11 +2,12 @@
     <p class="dot">●</p>
     <img class="education-image" src="{{educacion.imagen}}">
    <div>
-        <h3>{{educacion.titulo}}</h3>
-        <p>Carrera: {{educacion.carrera}}</p>
-        <p>{{educacion.inicio}} - {{educacion.fin}}</p>
+        <p class="edu-fecha">{{educacion.inicio}} - {{educacion.fin}}</p>
+        <h3 class="edu-titulo">{{educacion.titulo}}</h3>
+        <p class="edu-carrera">Carrera: {{educacion.carrera}}</p>
+        
     </div>
-    <div>
+    <div class="edu-button-container">
         <app-education-form [data]="educacion" [operation]="'edit'"></app-education-form>
         <app-education-form [data]="educacion" [operation]="'delete'"></app-education-form>
     </div>

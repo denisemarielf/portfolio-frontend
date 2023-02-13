@@ -26,7 +26,7 @@ import { EducationFormComponent } from './components/education-components/educat
 import { ProyectoFormularioComponent } from './components/proyecto-components/proyecto-formulario/proyecto-formulario.component';
 import { SobreMiFormularioComponent } from './components/sobre-mi/sobre-mi-formulario/sobre-mi-formulario.component';
 import { SkillFormularioComponent } from './components/skill-components/skill-formulario/skill-formulario.component';
-
+import { AngularResizeEventModule } from 'angular-resize-event'
 
 
 @NgModule({
@@ -60,7 +60,7 @@ import { SkillFormularioComponent } from './components/skill-components/skill-fo
     FormsModule,
     FontAwesomeModule,
     NgbModule,
-
+    AngularResizeEventModule
   ],
   providers: [],
   bootstrap: [AppComponent]

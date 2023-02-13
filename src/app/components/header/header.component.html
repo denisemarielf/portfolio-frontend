@@ -1,18 +1,49 @@
 <header>
-    <nav>
-      <img class="logo" src="../../../assets/arg-programa.png">     
-      <a target="_blank" href="https://github.com/denisemarielf">
-        <img class="icon" src="../../../assets/github-mark/github-mark.png">  
-      </a>
-     <app-login></app-login>
+  <img class="logo" src="../../../assets/arg-programa.png">
+  <a (click)="toggleNavbar()" class="toggle-button">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </a>
+  <div class="nav-container" [ngClass]="{'active': navbarOpen}">
+  <nav>
+  
+    <ul class="nav-ul">
+        <li class="nav-item" class="nav-link" (click)="selectSection('sobre-mi'); toggleNavbar()">
+          <fa-icon [icon]="homeIcon"></fa-icon>
+          Home
+        </li>
+        <li class="nav-item" class="nav-link" (click)="selectSection('experiencia'); toggleNavbar()">
+          <fa-icon [icon]="experienciaIcon"></fa-icon>
+          Experiencia
+        </li>
+        <li class="nav-item" class="nav-link" (click)="selectSection('educacion'); toggleNavbar()">
+          <fa-icon [icon]="educacionIcon"></fa-icon>
+          Educacion
+        </li>
+        <li class="nav-item" class="nav-link" (click)="selectSection('skills'); toggleNavbar()">
+          <fa-icon [icon]="skillsIcon"></fa-icon>
+          Skills
+        </li>
+        <li class="nav-item" class="nav-link" (click)="selectSection('proyectos'); toggleNavbar()">
+          <fa-icon [icon]="proyectosIcon"></fa-icon>
+          Proyectos
+        </li>
+    </ul>
+  </nav>
 
- 
-    </nav>
-   <section class="banner">
-        <h1>Hola, soy Denise Fernandez</h1>
-        <h2>Bienvenidos a mi portfolio</h2>
-    </section> 
-    
+  <app-login (click)="toggleNavbar()"></app-login>
+
+  <div class="social-media">
+    <a target="_blank" href="https://github.com/denisemarielf">
+      <img class="icon" src="../../../assets/github-mark/github-mark.png">
+    </a>
+    <a target="_blank" href="https://github.com/denisemarielf">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png">
+    </a>
+    <a target="_blank" href="https://github.com/denisemarielf">
+      <img class="icon" src="https://cdn-icons-png.flaticon.com/512/3178/3178158.png">
+    </a>
+  </div>
+</div>
 </header>
-
-

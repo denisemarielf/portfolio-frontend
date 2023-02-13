@@ -1,0 +1,14 @@
+.app {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  
+}
+
+
+main {
+    border: 1px solid red;
+    padding: 40px;
+    overflow: auto;
+    max-height: 100vh;
+    
+}

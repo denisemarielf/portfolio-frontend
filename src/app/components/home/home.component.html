@@ -1,6 +1,10 @@
-<app-header></app-header>
-<app-sobre-mi></app-sobre-mi>
-<app-experiences-container></app-experiences-container>
-<app-education-container></app-education-container>
-<app-skills-container></app-skills-container>
-<app-proyectos-container></app-proyectos-container>
+<div class="app" >
+<app-header  (newItemEvent)=selectSection($event)></app-header>
+ <main>
+    <app-sobre-mi *ngIf="selection === 'sobre-mi'"></app-sobre-mi>
+    <app-experiences-container *ngIf="selection === 'experiencia'"></app-experiences-container>
+    <app-education-container *ngIf="selection === 'educacion'"></app-education-container>
+    <app-skills-container *ngIf="selection === 'skills'"></app-skills-container>
+    <app-proyectos-container *ngIf="selection === 'proyectos'"></app-proyectos-container>
+</main>
+</div>

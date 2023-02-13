@@ -16,11 +16,16 @@ export class SobreMiFormularioComponent {
 
   constructor(private personaService: PersonaService, public modal: NgbModal) { }
 
-  onSubmit(): void {
-    this.personaService.save(this.persona)
-  }
-
   getPersonaDetails():void {
     this.persona = this.data;
   }
+
+  onSubmit():void {
+    let pers = this.persona
+    this.personaService.save(pers).subscribe(data => {
+    }, err => {
+      alert("Fallo")
+    })
+    
+  } 
 }

@@ -1,10 +1,12 @@
 <section class="education-container">
+    <div class="educacion-top">
+    <h2>Educacion</h2>
+    
+        <app-education-form [operation]="'create'"></app-education-form>
+    
+    </div>   
     <div>
         <app-education *ngFor="let educacion of listaDeEducaciones" [educacion] = "educacion"/>      
-    </div>    
-    <h2>Educacion</h2>
-    <div>
-        <app-education-form [operation]="'create'"></app-education-form>
-    </div>
+    </div>   
 </section>
 

@@ -1,9 +1,9 @@
 .experience-item {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     align-items: center;
-    border-left: 8px solid pink;
-    padding-left: 40px;
+    border-left: 4px solid pink;
+    height: 150px;
 }
 
 .experience-image {
@@ -13,7 +13,32 @@
 
 .dot {
     position: relative;
-    right: 59px;
-    font-size: 50px;
+    right: 10px;
+    font-size: 25px;
     color: lightblue;
+    align-self: flex-start;
 }
+
+.e-fecha {
+    font-size: small;
+}
+
+.e-titulo {
+    font-size: medium;
+    font-weight: bold;
+}
+
+.e-descripcion {
+    font-size: medium;
+}
+
+.e-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.experience-image {
+    
+}
+
