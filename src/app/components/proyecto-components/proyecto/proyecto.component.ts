@@ -8,7 +8,8 @@ import { Proyecto } from 'src/app/model/proyecto.model';
 })
 export class ProyectoComponent {
  
-  @Input() proyecto: Proyecto = new Proyecto("","","","")
+  @Input() proyecto: Proyecto = new Proyecto("","","","", "", "")
+  @Input() isLogged: boolean;
 
   ngOnInit(): void {
   }

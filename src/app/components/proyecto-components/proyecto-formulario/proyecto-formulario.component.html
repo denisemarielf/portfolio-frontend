@@ -1,15 +1,15 @@
 <ng-template #contenido let-modal>
+    <button class=" btn btn-outline-danger close" aria-label="close" type="button" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
     <section class="form-container">
-        <div class="modal-header">
-    <h4 class="modal-title">Agregar proyecto</h4>
+        <div *ngIf="operation !== 'delete'" class="modal-header justify-content-center">
+    <h4 class="modal-title">{{operation === "edit" ? "Editar proyecto" : "Agregar proyecto"}}</h4>
         </div>
-        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-            <span aria-hidden="true">&times;</span>
-        </button>
         <div class="modal-body">
 
-        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
-            <div *ngIf="operation !== 'delete'">
+        <form class="form d-flex flex-column align-items-center" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+            <div class="d-flex flex-column" *ngIf="operation !== 'delete'">
             <label for="titulo" class="label">
                 Titulo:
                 <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="proyecto.titulo" required />
@@ -22,6 +22,14 @@
                 Link:
                 <input class="form-control" name="link" type="text" id="link" [(ngModel)]="proyecto.link" required />
             </label>
+            <label class="repositorio" for="repositorio">
+                Repositorio:
+                <input class="form-control" name="repositorio" type="text" id="repositorio" [(ngModel)]="proyecto.repositorio" required />
+            </label>
+            <label class="imagen" for="imagen">
+                Imagen:
+                <input class="form-control" name="imagen" type="text" id="imagen" [(ngModel)]="proyecto.imagen" required />
+            </label>
             <label class="fecha" for="fecha">
                 Fecha:
                 <input class="form-control" name="fecha" type="date" id="fecha" [(ngModel)]="proyecto.fecha" required />
@@ -30,7 +38,7 @@
         <div *ngIf="operation === 'delete'"> 
             <h3>¿Estas seguro que quieres eliminar?</h3>
         </div>
-            <button  (click)="modal.close()">{{operation === "delete" ? "Eliminar" : "Enviar"}}</button>
+            <button class="btn btn-light m-3" (click)="modal.close()">{{operation === "delete" ? "Eliminar" : "Enviar"}}</button>
 
 
         </form>
@@ -38,6 +46,10 @@
     </section>
      </ng-template>
     <button *ngIf="operation === 'create'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Agregar</button>
-    <button *ngIf="operation === 'delete'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Eliminar</button>
-    <button *ngIf="operation === 'edit'" type="button" class="btn btn-light" (click)="modal.open(contenido); getProyectoDetails()">Editar</button>
+    <button *ngIf="operation === 'delete'" type="button" class="btn btn-light" (click)="modal.open(contenido)">
+        <fa-icon [icon]="deleteIcon"></fa-icon>
+    </button>
+    <button *ngIf="operation === 'edit'" type="button" class="btn btn-light" (click)="modal.open(contenido); getProyectoDetails()">
+        <fa-icon [icon]="editIcon"></fa-icon>
+    </button>
 

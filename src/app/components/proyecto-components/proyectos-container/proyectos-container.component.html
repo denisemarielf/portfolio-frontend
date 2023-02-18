@@ -1,7 +1,9 @@
 <section class="proyectos-container">
-    <h2>Proyectos</h2>
-    <app-proyecto-formulario [operation]="'create'"></app-proyecto-formulario>
-    <div>
-        <app-proyecto *ngFor="let proyecto of listaDeProyectos" [proyecto] = "proyecto"/>
+    <div class="proyectos-top">
+        <h2>Proyectos</h2>
+        <app-proyecto-formulario *ngIf="isLogged" [operation]="'create'"></app-proyecto-formulario>
+    </div>
+    <div class="proyectos-lista">
+        <app-proyecto *ngFor="let proyecto of listaDeProyectos" [isLogged]="isLogged" [proyecto] = "proyecto"/>
     </div>
 </section>

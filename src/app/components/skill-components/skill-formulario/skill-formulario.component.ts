@@ -1,4 +1,5 @@
 import { Component, Input} from '@angular/core';
+import { faEdit, faXmark, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Habilidad } from 'src/app/model/habilidad.model';
 import { HabilidadService } from 'src/app/services/habilidad.service';
@@ -12,6 +13,8 @@ import { HabilidadService } from 'src/app/services/habilidad.service';
 export class SkillFormularioComponent {
   @Input() operation !: "create" | "edit" | "delete"
   @Input() data: Habilidad;
+  editIcon = faEdit
+  deleteIcon = faXmarkCircle
 
   habilidad: Habilidad = new Habilidad("", 0, "", "");
 

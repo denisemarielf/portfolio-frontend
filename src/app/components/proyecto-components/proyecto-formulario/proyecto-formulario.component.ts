@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { faEdit, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Proyecto } from 'src/app/model/proyecto.model';
 import { ProyectoService } from 'src/app/services/proyecto.service';
@@ -12,7 +13,9 @@ export class ProyectoFormularioComponent {
   @Input() operation!: 'create' | 'edit' | 'delete';
   @Input() data: Proyecto;
 
-  proyecto: Proyecto = new Proyecto('', '', '', '');
+  editIcon = faEdit
+  deleteIcon = faXmarkCircle
+  proyecto: Proyecto = new Proyecto('', '', '', '', '', '');
 
   constructor(
     private proyectoService: ProyectoService,
@@ -26,7 +29,9 @@ export class ProyectoFormularioComponent {
         this.proyecto.titulo,
         this.proyecto.fecha,
         this.proyecto.descripcion,
-        this.proyecto.link
+        this.proyecto.link,
+        this.proyecto.repositorio,
+        this.proyecto.imagen
       );
     } else {
       exp = this.proyecto;

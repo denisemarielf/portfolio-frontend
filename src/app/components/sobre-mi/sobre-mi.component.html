@@ -7,7 +7,7 @@
          <h4>Soy {{persona.ocupacion}}</h4>
          <h4>Acerca de mi</h4>
          <p>{{persona.sobre_mi}}</p>
-         <app-sobre-mi-formulario [data]="persona"></app-sobre-mi-formulario>
+         <app-sobre-mi-formulario *ngIf="isLogged" [data]="persona"></app-sobre-mi-formulario>
       </div>
 
     </div>    

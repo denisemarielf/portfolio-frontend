@@ -1,11 +1,11 @@
 <section class="experiences-container">
     <div class="experience-top">
             <h2>Experiencia</h2>
-        <app-experiencia-formulario [operation]="'create'"></app-experiencia-formulario>
+        <app-experiencia-formulario *ngIf="isLogged"  [operation]="'create'"></app-experiencia-formulario>
     </div>
 
     <div class="experience-items">
-        <app-experience *ngFor="let experiencia of listaDeExperiencias" [experiencia] = "experiencia"/>
+        <app-experience *ngFor="let experiencia of listaDeExperiencias" [isLogged]="isLogged" [experiencia] = "experiencia"/>
     </div>
 </section>
 

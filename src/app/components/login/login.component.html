@@ -1,12 +1,13 @@
 
-<ng-template #contenido let-modal>
+<ng-template #contenido let-modal>        
+    <button class="btn btn-outline-danger close" aria-label="close" type="button" (click)="modal.dismiss()">
+            <span aria-hidden="true">&times;</span>
+        </button>
     <section class="form-container">
         <div class="modal-header">
     <h4 class="modal-title">Login</h4>
         </div>
-        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-            <span aria-hidden="true">&times;</span>
-        </button>
+
         <div class="modal-body">
         <form class="form" #f="ngForm" (ngSubmit)="onLogin()" novalidate>
             <label class="label">
@@ -18,11 +19,11 @@
                 <input name="password" type="password" id="password" [(ngModel)]="password" required />
             </label>
        
-            <button (click)="modal.close()">Ingresar</button>
+            <button class="btn btn-light" (click)="modal.close()">Ingresar</button>
         </form>
     </div>
     </section>
-     </ng-template>
+</ng-template>
     <button *ngIf="!isLogged" type="button" class="btn btn-light" (click)="modal.open(contenido)">Login</button>
     <button *ngIf="isLogged" type="button" class="btn btn-outline-danger" (click)="onLogOut()">Cerrar sesión</button>
     

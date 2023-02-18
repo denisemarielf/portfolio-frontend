@@ -1,15 +1,15 @@
 <ng-template #contenido let-modal>
+    <button class=" btn btn-outline-danger close" aria-label="close" type="button" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
     <section class="form-container">
-        <div class="modal-header">
-    <h4 class="modal-title">Agregar habilidad</h4>
-        </div>
-        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-            <span aria-hidden="true">&times;</span>
-        </button>
+        <div *ngIf="operation !== 'delete'" class="modal-header justify-content-center">
+            <h4  class="modal-title">{{operation === "edit" ? "Editar habilidad" : "Agregar habilidad"}}</h4>
+                </div>
         <div class="modal-body">
 
-        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
-            <div *ngIf="operation !== 'delete'">
+        <form class="form d-flex flex-column align-items-center gap-30" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+            <div class="d-flex flex-column" *ngIf="operation !== 'delete'">
             <label for="titulo" class="label">
                 Titulo:
                 <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="habilidad.titulo" required />
@@ -31,7 +31,7 @@
         <div *ngIf="operation === 'delete'"> 
             <h3>¿Estas seguro que quieres eliminar?</h3>
         </div>
-            <button  (click)="modal.close()">{{operation === "delete" ? "Eliminar" : "Enviar"}}</button>
+            <button class="btn btn-light m-3" (click)="modal.close()">{{operation === "delete" ? "Eliminar" : "Enviar"}}</button>
 
 
         </form>
@@ -39,5 +39,9 @@
     </section>
      </ng-template>
     <button *ngIf="operation === 'create'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Agregar</button>
-    <button *ngIf="operation === 'delete'" type="button" class="btn btn-light" (click)="modal.open(contenido)">Eliminar</button>
-    <button *ngIf="operation === 'edit'" type="button" class="btn btn-light" (click)="modal.open(contenido); getHabilidadDetails()">Editar</button>
+    <button *ngIf="operation === 'delete'" type="button" class="btn btn-light" (click)="modal.open(contenido)">
+        <fa-icon [icon]="deleteIcon"></fa-icon>
+    </button>
+    <button *ngIf="operation === 'edit'" type="button" class="btn btn-light" (click)="modal.open(contenido); getHabilidadDetails()">
+        <fa-icon [icon]="editIcon"></fa-icon>
+    </button>

@@ -6,9 +6,7 @@ header {
     background-image: url(../../../assets/cd5fe795958dd6f905874e708175b9cf.jpg);
     background-position: center;
     background-size:cover;
-    justify-content: space-around;
-   
-    border: 1px solid red;
+    justify-content: space-evenly;
     flex-grow: 100%;
     
 }
@@ -23,6 +21,8 @@ header {
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    height: 50%;
+    
 }
 
 
@@ -62,6 +62,7 @@ header {
 
 .logo {
     max-height: 70px;
+    margin: 10px;
 }
 
 .social-media {
@@ -72,7 +73,7 @@ header {
 
 .toggle-button {
     position: absolute;
-    top: .75rem;
+    top: 1.5rem;
     right:1rem;
     display: none;
     flex-direction: column;
@@ -104,6 +105,7 @@ header {
         gap: 20px;
         position: relative;
         width: 100%;
+        background-color: white;
     }
 
     ul {
@@ -114,9 +116,13 @@ header {
         position: absolute;
         display: flex;
         width: 100%;
-        top: 72px;
+        top: 80px;
         left: 0;
         background-color: white;
+        height: fit-content;
+        gap: 40px;
+        font-size: large;
+        padding-top: 40px;
     }
    
 }

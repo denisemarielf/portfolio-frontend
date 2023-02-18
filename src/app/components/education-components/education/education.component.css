@@ -4,11 +4,15 @@
     align-items: center;
     border-left: 4px solid pink;
     height: 150px;
+    width: 100%;
+}
+
+.education-info {
+    width: 50%;
 }
 
 .education-image {
-    width: 100px;
-    height: 100px;
+    width: 15%;
 }
 
 .dot {

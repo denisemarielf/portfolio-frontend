@@ -10,6 +10,7 @@ import { faPenToSquare, faSquareXmark } from '@fortawesome/free-solid-svg-icons'
 export class EducationComponent implements OnInit {
 
   @Input() educacion: Educacion = new Educacion("","","","",0,0,0)
+  @Input() isLogged: boolean;
   editIcon = faPenToSquare
   deleteIcon = faSquareXmark
 

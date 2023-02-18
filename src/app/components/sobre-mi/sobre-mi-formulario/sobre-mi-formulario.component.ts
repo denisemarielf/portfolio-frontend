@@ -1,7 +1,9 @@
 import { Component, Input } from '@angular/core';
+
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Persona } from 'src/app/model/persona.model';
 import { PersonaService } from 'src/app/services/persona.service';
+
 
 @Component({
   selector: 'app-sobre-mi-formulario',
@@ -14,6 +16,7 @@ export class SobreMiFormularioComponent {
 
   persona: Persona = new Persona("", "", "", "", "", "", "", "", "");
 
+ 
   constructor(private personaService: PersonaService, public modal: NgbModal) { }
 
   getPersonaDetails():void {

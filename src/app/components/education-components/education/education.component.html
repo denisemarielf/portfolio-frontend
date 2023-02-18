@@ -1,13 +1,13 @@
 <section class="education-item">
     <p class="dot">●</p>
     <img class="education-image" src="{{educacion.imagen}}">
-   <div>
+   <div class="education-info">
         <p class="edu-fecha">{{educacion.inicio}} - {{educacion.fin}}</p>
         <h3 class="edu-titulo">{{educacion.titulo}}</h3>
         <p class="edu-carrera">Carrera: {{educacion.carrera}}</p>
         
     </div>
-    <div class="edu-button-container">
+    <div *ngIf="isLogged" class="edu-button-container">
         <app-education-form [data]="educacion" [operation]="'edit'"></app-education-form>
         <app-education-form [data]="educacion" [operation]="'delete'"></app-education-form>
     </div>

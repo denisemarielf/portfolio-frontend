@@ -33,12 +33,21 @@
 
 .educacion-experiencia {
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    justify-items: start;
+    justify-content: space-evenly;
+    width: 80%;
 }
+
 
 .container {
     display: flex;
     gap: 40px;
     flex-direction: column;
+    align-items: center;
+}
+
+app-experiences-container {
+    width: 100%;
 }

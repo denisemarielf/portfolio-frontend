@@ -1,16 +1,17 @@
 
-<ng-template #contenido let-modal>
+<ng-template #contenido let-modal>        
+    <button class=" btn btn-outline-danger close" aria-label="close" type="button" (click)="modal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
     <section class="form-container">
-        <div class="modal-header">
+        <div class="modal-header justify-content-center">
     <h4 class="modal-title">Agregar persona</h4>
         </div>
-        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
-            <span aria-hidden="true">&times;</span>
-        </button>
+
         <div class="modal-body">
 
-        <form class="form" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
- 
+        <form class="form d-flex flex-column align-items-center" #f="ngForm" novalidate (ngSubmit)="onSubmit()">
+            <div class="d-flex flex-column">
             <label for="nombre" class="label">
                 Nombre:
                 <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="persona.nombre" required />
@@ -47,8 +48,8 @@
                 Imagen de perfil:
                 <input class="form-control" name="imagen_perfil" type="text" id="imagen_perfil" [(ngModel)]="persona.imagen_perfil" required />
             </label>
-
-            <button  (click)="modal.close()">Editar</button>
+            </div>
+            <button class="btn btn-light m-3" (click)="modal.close()">Editar</button>
         </form>
     </div>
     </section>

@@ -15,7 +15,7 @@ export class ExperienceComponent implements OnInit{
 
   constructor(private tokenService: TokenService) { }
 
-  isLogged!: boolean;
+  @Input() isLogged!: boolean;
   deleteIcon = faSquareXmark
   editIcon = faEdit
 

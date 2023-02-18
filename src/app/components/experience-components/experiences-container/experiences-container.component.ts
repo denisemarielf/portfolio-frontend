@@ -12,9 +12,9 @@ import { Subscription } from 'rxjs'
 export class ExperiencesContainerComponent {
   //listaDeExperiencias = [{titulo: "msdmfksdfm", inicio: 2020, fin: 2021, logo: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=", descripcion: "mdksfmkds"}, {titulo: "msdmfksdfm", inicio: 2020, fin: 2021, logo: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=", descripcion: "mdksfmkds"},{titulo: "msdmfksdfm", inicio: 2020, fin: 2021, logo: "https://media.istockphoto.com/id/1147544807/vector/thumbnail-image-vector-graphic.jpg?s=612x612&w=0&k=20&c=rnCKVbdxqkjlcs3xH87-9gocETqpspHFXu5dIGB4wuM=", descripcion: "mdksfmkds"}]
   listaDeExperiencias = new Array<Experiencia>()
-
+  isLogged=false
   suscription!: Subscription
-  constructor (public experienciaService : ExperienciaService) {  }
+  constructor (public experienciaService : ExperienciaService, private tokenService : TokenService) {  }
 
 
   ngOnInit(): void {
@@ -22,11 +22,17 @@ export class ExperiencesContainerComponent {
     this.suscription = this.experienciaService.refresh$.subscribe(()=> {
       this.getExperiencia()
     })
+    if (this.tokenService.getToken()) {
+      this.isLogged = true
+    } else {
+      this.isLogged = false
+    }
   }
 
   getExperiencia():void {
     this.experienciaService.get().subscribe((data: any) => {
       this.listaDeExperiencias = data;
+
     })
   }
 

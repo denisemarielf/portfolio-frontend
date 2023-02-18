@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import { Component, Input, OnInit} from '@angular/core';
 import { Habilidad } from 'src/app/model/habilidad.model';
 
 @Component({
@@ -7,6 +7,8 @@ import { Habilidad } from 'src/app/model/habilidad.model';
   styleUrls: ['./skill.component.css']
 })
 export class SkillComponent {
-
+  @Input() isLogged: boolean;
   @Input() habilidad: Habilidad = new Habilidad("", 0, "", "");
+
+  
 }

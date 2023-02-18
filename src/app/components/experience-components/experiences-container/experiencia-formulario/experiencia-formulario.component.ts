@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { faEdit, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-experiencia-formulario',
@@ -11,6 +12,8 @@ import { ExperienciaService } from 'src/app/services/experiencia.service';
 export class ExperienciaFormularioComponent implements OnInit {
   @Input() operation!: "create" | "edit" | "delete"
   @Input() data: Experiencia;
+  editIcon = faEdit
+  deleteIcon = faXmarkCircle
   
   experiencia:Experiencia = new Experiencia("", "", "", "", "");
 

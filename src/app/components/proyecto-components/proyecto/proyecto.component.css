@@ -1,12 +1,28 @@
 .proyecto {
-    display: flex;
-    padding: 20px;
-    align-items: center;
     gap: 20px;
-    border-bottom: 1px solid yellow;
+    display: flex;
+    align-items: center;
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 5px;
+    padding: 15px;
+    border-top: 5px solid rgb(146, 211, 231);
+    justify-content: space-between;
 }
 
 .proyecto-imagen {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 150px;
+}
+
+.proyecto-buttons {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 20px;
+}
+
+.link-buttons {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
 }

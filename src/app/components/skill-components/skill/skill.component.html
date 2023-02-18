@@ -15,6 +15,9 @@
   [responsive]="true"
 ></circle-progress>
 <p>{{habilidad.titulo}}</p>
-<app-skill-formulario [data]="habilidad" [operation]="'edit'"></app-skill-formulario>
-<app-skill-formulario [data]="habilidad" [operation]="'delete'"></app-skill-formulario>
+<div *ngIf="isLogged" class="skill-buttons">
+  <app-skill-formulario [data]="habilidad" [operation]="'edit'"></app-skill-formulario>
+  <app-skill-formulario [data]="habilidad" [operation]="'delete'"></app-skill-formulario>
+</div>
+
 </div>

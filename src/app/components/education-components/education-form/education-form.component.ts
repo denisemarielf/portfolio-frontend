@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { faEdit, faXmarkCircle } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Educacion } from 'src/app/model/educacion.model';
 import { EducacionService } from 'src/app/services/educacion.service';
@@ -11,6 +12,8 @@ import { EducacionService } from 'src/app/services/educacion.service';
 export class EducationFormComponent {
   @Input() operation!: "create" | "edit" | "delete"
   @Input() data: Educacion;
+  editIcon = faEdit
+  deleteIcon = faXmarkCircle
   
   educacion: Educacion = new Educacion("", "", "", "", 0, 0, 0);
 
