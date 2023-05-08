@@ -2,9 +2,9 @@
     <p class="dot">●</p>
     <img class="education-image" src="{{educacion.imagen}}">
    <div class="education-info">
-        <p class="edu-fecha">{{educacion.inicio}} - {{educacion.fin}}</p>
+        <p class="edu-fecha">{{educacion.inicio}} - {{educacion.fin}} ({{educacion.escuela}})</p>
         <h3 class="edu-titulo">{{educacion.titulo}}</h3>
-        <p class="edu-carrera">Carrera: {{educacion.carrera}}</p>
+        <p class="edu-carrera">Carrera: {{educacion.carrera}} </p>
         
     </div>
     <div *ngIf="isLogged" class="edu-button-container">
