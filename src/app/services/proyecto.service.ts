@@ -15,7 +15,7 @@ export class ProyectoService {
     return this._refresh$;
   }
 
-  URL =  "http://localhost:8080/proyecto"
+  URL =  "https://portfolio-backend-lk6h.onrender.com/proyecto"
 
   constructor(private http :HttpClient) { }
 

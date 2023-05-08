@@ -14,7 +14,7 @@ export class HabilidadService {
     return this._refresh$;
   }
 
-  URL =  "http://localhost:8080/habilidades"
+  URL =  "https://portfolio-backend-lk6h.onrender.com/habilidades"
 
   constructor(private http :HttpClient) { }
 

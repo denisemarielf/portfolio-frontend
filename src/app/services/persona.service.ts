@@ -10,7 +10,7 @@ export class PersonaService {
 
   private _refresh$ = new Subject<void>()
 
-  URL = "http://localhost:8080/persona";
+  URL = "https://portfolio-backend-lk6h.onrender.com/persona";
 
   constructor(private http: HttpClient) {  }
 

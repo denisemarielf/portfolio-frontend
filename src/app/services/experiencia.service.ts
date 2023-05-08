@@ -10,7 +10,7 @@ import {  tap } from 'rxjs/operators'
 export class ExperienciaService {
 
   private _refresh$ = new Subject<void>()
-  URL =  "http://localhost:8080/experiencia"
+  URL =  "https://portfolio-backend-lk6h.onrender.com/experiencia"
 
   constructor(private http :HttpClient) { }
 
